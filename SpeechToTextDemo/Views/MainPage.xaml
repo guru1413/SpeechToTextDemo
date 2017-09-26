@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SpeechToTextDemo.Views.MainPage"
+             Title="MainPage">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Red" />
+        <Button Text="Via Native" Command="{Binding NativeSpeechCommand}"/>
+
+        <Label Text="Using Cognitive Service"/>
+        <Button Text="{Binding ButtonText}" Command="{Binding SpeechCommand}"/>
+        <Label Text="{Binding Title}" />
+    </StackLayout>
+</ContentPage>
